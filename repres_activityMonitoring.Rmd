@@ -13,8 +13,8 @@ The dataset [Activity Monitoring][1] used is a compressed file obtained from the
 library(data.table)
 
 # Download and decompress the data file
-# fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip";
-# download.file(fileUrl, destfile="activity.zip", method="wget")
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip";
+download.file(fileUrl, destfile="activity.zip", method="wget")
 unzip("activity.zip")
 
 # Load the data from file

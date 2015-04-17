@@ -1,9 +1,6 @@
----
-title: "Activity Monitoring"
-author: "Ngoc Lan Nguyen"
-date: '2015-04-15'
-output: html_document
----
+# Activity Monitoring
+Ngoc Lan Nguyen  
+2015-04-15  
    
 ### Part 1: Loading and preprocessing the dataset  
 
@@ -49,7 +46,7 @@ hist(stepTotal$total, xlab="total number of steps per day",
      main="figure 1: distribution of the total number of steps per day");
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png) 
+![](repres_activityMonitoring_files/figure-html/unnamed-chunk-1-1.png) 
 
 To study the central tendency of this distribution, we compute its mean and median values as following:  
 
@@ -79,7 +76,7 @@ with(stepMeanPerInt, plot(interval, mean, type="l", panel.first = grid(),
     )
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
+![](repres_activityMonitoring_files/figure-html/unnamed-chunk-2-1.png) 
 
 On a daily basis, this figure indicates that most of the activities are around 50 steps for each 5 minutes (in average) with 4 ~ 5 periods of the day where the activities approach 100 steps. Particularly, there is one 5-minute interval that displays a higher rate (~ 200 steps). To find this corresponding period, the following computation is used:   
 
@@ -122,7 +119,7 @@ hist(stepNewTotal$total, xlab="total number of steps per day",
      main="Figure 3: distribution of the total number of steps per day\n with NA values imputed");
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+![](repres_activityMonitoring_files/figure-html/unnamed-chunk-5-1.png) 
 
 The resulted values of the mean and the median are computed as:
 
@@ -185,7 +182,7 @@ with(subset(stepMeanPerInt, daytype=="weekend"),
      )
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
+![](repres_activityMonitoring_files/figure-html/unnamed-chunk-8-1.png) 
 
 
 

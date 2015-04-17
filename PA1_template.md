@@ -1,15 +1,17 @@
----
-title: "Activity Monitoring"
-author: "Ngoc Lan Nguyen"
-date: '2015-04-15'
-output:
-  html_document:
-    keep_md: yes
----
+# Activity Monitoring
+Ngoc Lan Nguyen  
+2015-04-15  
+   
+### Introduction
+
+It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a [Fitbit][1], [Nike Fuelband][2], or [Jawbone Up][3]. These type of devices are part of the “quantified self” movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.
+
+This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
+   
    
 ### Part 1: Loading and preprocessing the dataset  
 
-The dataset [Activity Monitoring][1] used is a compressed file obtained from the Reproducible Research website. An extraction of the file "activity.csv" is first performed and then, the data is loaded into a data table for analysis. Also, the date variable is reformated to a proper type. Since the current structure of the dataset is already in a tidy form, there is not any need for further preprocessing. The following script is used to accomplish these operations.  
+The dataset [Activity Monitoring][4] used is a compressed file obtained from the Reproducible Research website. An extraction of the file "activity.csv" is first performed and then, the data is loaded into a data table for analysis. Also, the date variable is reformated to a proper type. Since the current structure of the dataset is already in a tidy form, there is not any need for further preprocessing. The following script is used to accomplish these operations.  
 
 
 ```r
@@ -51,7 +53,7 @@ hist(stepTotal$total, xlab="total number of steps per day",
      main="figure 1: distribution of the total number of steps per day");
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-1-1.png) 
 
 To study the central tendency of this distribution, we compute its mean and median values as following:  
 
@@ -81,7 +83,7 @@ with(stepMeanPerInt, plot(interval, mean, type="l", panel.first = grid(),
     )
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 On a daily basis, this figure indicates that most of the activities are around 50 steps for each 5 minutes (in average) with 4 ~ 5 periods of the day where the activities approach 100 steps. Particularly, there is one 5-minute interval that displays a higher rate (~ 200 steps). To find this corresponding period, the following computation is used:   
 
@@ -124,7 +126,7 @@ hist(stepNewTotal$total, xlab="total number of steps per day",
      main="Figure 3: distribution of the total number of steps per day\n with NA values imputed");
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
 
 The resulted values of the mean and the median are computed as:
 
@@ -187,8 +189,12 @@ with(subset(stepMeanPerInt, daytype=="weekend"),
      )
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
 
 
+[1]: http://www.fitbit.com/   "Fitbit"
+[2]: http://www.nike.com/us/en_us/c/nikeplus-fuelband "Nike Fuelband"
+[3]: https://jawbone.com/up   "Jawbone Up"
+[4]: https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip      "Activity Monitoring"
 
-[1]: https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip      "Activity Monitoring"
+
